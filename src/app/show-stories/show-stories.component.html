@@ -1,0 +1,22 @@
+<app-loading *ngIf="grabbingContent"></app-loading>
+<div *ngIf="!grabbingContent">
+  <ul>
+    <li *ngFor="let item of stories;let i = index">
+      <app-list-item (downvote)="receiveMessaged($event)" (upvote)="receiveMessage($event)" [item]="item"></app-list-item>
+    </li>
+  </ul>
+
+  <a class="paginator" *ngIf="listStart !== 1" [routerLink]="['/' + routerLink, pageNum - 1]">
+    prev
+  </a>
+  <a class="paginator" *ngIf="stories?.length === 30" [routerLink]="['/' + routerLink, pageNum + 1]">
+    next
+  </a>
+</div>
+
+<div *ngIf="chartenable" id="chart-container">
+  <canvas  #myCanvas id="canvas"  baseChart width="100" height="500"
+   [chartType]="chartType"
+    [datasets]="chartData"
+     [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"></canvas>
+</div>

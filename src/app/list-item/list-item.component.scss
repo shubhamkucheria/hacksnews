@@ -1,0 +1,129 @@
+.column {
+  float: left;
+}
+
+.left, .right {
+  width: 25%;
+}
+
+.middle {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card {
+  background: var(--card-background);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 30, 84, 0.12), 0 1px 3px rgba(0, 30, 84, 0.08);
+  transition: all 0.15s ease;
+  margin-bottom: 15px;
+  display: block;
+  text-decoration: none;
+
+  .card-header {
+    .num {
+      color: #666;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .card-header__content {
+      .content__title {
+        font-weight: 500;
+        font-size: 17px;
+        color: var(--card-title-color);
+
+        &--link {
+          font-weight: 500;
+          font-size: 17px;
+          color: var(--card-title-color);
+          margin-right: 5px;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        span {
+          font-size: 13px;
+          a {
+            color: var(--meta-color);
+            text-decoration: none;
+            outline: none;
+            font-weight: normal;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      .content__meta {
+        font-size: 12px;
+        color: var(--meta-color);
+        margin-top: 8px;
+        .author,
+        .time {
+          &::after {
+            content: "|";
+            margin: 0 15px;
+          }
+        }
+        .author,
+        .comments {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.votebox {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 1em;
+
+  .vote {
+    cursor: pointer;
+    &:hover {
+      color: orange;
+    }
+  }
+}
+
+.active.up {
+    color: green;
+  }
+  .active.down {
+    color: red;
+  }
+
+
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 10px 10px 15px;
+
+    .card-header {
+      &__content {
+        margin-left: 5px !important;
+        .content__title {
+          &--link {
+            font-size: 15px !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+header {
+  width: 100%;
+  background: orange;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  nav {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 20px;
+    max-width: 880px;
+    margin: 0 auto;
+    .d-flex {
+      display: flex;
+      padding: 10px;
+      line-height: 5px;
+    }
+    .active-link {
+      border-bottom: 4px solid var(--border-color);
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 0 10px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+
+
+
+
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	min-height:100vh;
+}
+.Box{
+	position:relative;
+	width:150px;
+	height:150px;
+	border:3px solid rgba(255,255,255,.2);
+	border-radius:50%;
+	text-align:center;
+	line-height:150px;
+	color:#57beec;
+	font-size:20px;
+	box-shadow:0px 0px 10px rgba(0,0,0,.2);
+	font-weight:bold;
+}
+.Box:before{
+	content:'';
+	position:absolute;
+	top:-3px;
+	left:-3px;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	border:3px solid transparent;
+	border-top:3px solid #57beec;
+	border-right:3px solid #57beec;
+	border-radius:50%;
+	transform:rotate(0deg);
+	animation:SpanLoading 2s linear infinite;
+}
+.Box span{
+	position:absolute;
+	top: 50%;
+	left:50%;
+	width:50%;
+	height:3px;
+	background-color:transparent;
+	transform-style:preserve-3d;
+	transform-origin:left;
+	transform:rotate(42deg);
+	animation:Loading 2s linear infinite;
+}
+.Box span:before{
+	content:'';
+	position:absolute;
+	width:15px;
+	height:15px;
+	border-radius:50%;
+	background-color:#57beec;
+	right:-7px;
+	bottom:-7px;
+	box-shadow:0px 0px 10px #57beec;
+}
+
+
+@keyframes Loading{
+	0%{
+	transform:rotate(42deg);
+	}
+	100%{
+	transform:rotate(402deg);
+	}
+}
+
+@keyframes SpanLoading{
+	0%{
+	transform:rotate(0deg);
+	}
+	100%{
+	transform:rotate(360deg);
+	}
+}
